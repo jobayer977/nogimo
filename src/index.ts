@@ -18,7 +18,7 @@ const CacheStore = {
 		try {
 			return JSON.parse(LocalStorageService.get(key) as any)
 		} catch (error) {
-			return null
+			return {}
 		}
 	},
 	set: (key: string, value: any) => {
@@ -32,10 +32,10 @@ export class Nogimo<T> {
 	private obs$!: BehaviorSubject<T>
 	private cacheKey: string | undefined
 	private initialValueSnapShot: T
-	constructor(initialValue: T, cacheKey?: string) {
+	constructor(initialValue: T, cacheKey: string = null) {
 		this.cacheKey = cacheKey
-		if (isEmpty(initialValue)) {
-			this.obs$ = new BehaviorSubject<T>(CacheStore.get(cacheKey as string))
+		if (initialValue === null) {
+			this.obs$ = new BehaviorSubject<T>(CacheStore.get(cacheKey))
 		} else {
 			this.obs$ = new BehaviorSubject<T>(initialValue)
 		}
@@ -67,6 +67,10 @@ export class Nogimo<T> {
 	}
 }
 const isEmpty = (value: any): boolean => {
+	// check is string
+	if (typeof value === "string") {
+		return value.length === 0
+	}
 	if (typeof value === "object") {
 		return Object.keys(value).length === 0
 	}
