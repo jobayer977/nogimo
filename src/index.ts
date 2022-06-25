@@ -32,7 +32,7 @@ export class Nogimo<T> {
 	private obs$!: BehaviorSubject<T>
 	private cacheKey: string | undefined
 	private initialValueSnapShot: T
-	constructor(initialValue: T, cacheKey: string = null) {
+	constructor(initialValue: T, cacheKey?: string = null) {
 		this.cacheKey = cacheKey
 		if (initialValue === null) {
 			this.obs$ = new BehaviorSubject<T>(CacheStore.get(cacheKey))
