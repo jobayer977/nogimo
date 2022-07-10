@@ -1,4 +1,3 @@
-"use strict";
 var __assign = (this && this.__assign) || function () {
     __assign = Object.assign || function(t) {
         for (var s, i = 1, n = arguments.length; i < n; i++) {
@@ -10,9 +9,7 @@ var __assign = (this && this.__assign) || function () {
     };
     return __assign.apply(this, arguments);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.Nogimo = void 0;
-var rxjs_1 = require("rxjs");
+import { BehaviorSubject } from 'rxjs';
 var LocalStorageService = {
     set: function (key, value) {
         localStorage.setItem(key, value);
@@ -83,13 +80,13 @@ var Nogimo = /** @class */ (function () {
         };
         this.cacheKey = cacheKey;
         if (initialValue === null) {
-            this.obs$ = new rxjs_1.BehaviorSubject(CacheStore.get(cacheKey));
+            this.obs$ = new BehaviorSubject(CacheStore.get(cacheKey));
         }
         else {
-            this.obs$ = new rxjs_1.BehaviorSubject(initialValue);
+            this.obs$ = new BehaviorSubject(initialValue);
         }
         this.initialValueSnapShot = initialValue;
     }
     return Nogimo;
 }());
-exports.Nogimo = Nogimo;
+export { Nogimo };
