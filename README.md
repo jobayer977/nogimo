@@ -82,6 +82,10 @@ const store = new Nogimo(null, "storageKey");
 
 [Svelte  Example  ](https://github.com/jobayer977/nogimo/tree/main/examples/svelte)
   
+## Credits
+
+[@jahir9991](https://github.com/jahir9991)
+  
 
 
 
