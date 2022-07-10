@@ -17,7 +17,7 @@ yarn add nogimo
 ```
   
 
-# Tossify
+# Nogimo
 
   
 
