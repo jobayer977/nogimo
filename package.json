@@ -20,7 +20,17 @@
     "type": "git",
     "url": "git+https://github.com/Jobayerdev/plight.git"
   },
-  "keywords": [],
+  "keywords": [
+    "nogimo",
+    "rxjs",
+    "state-management",
+    "rxjs-state-management",
+    "angualr",
+    "angular-rxjs",
+    "rxjs-angular",
+    "local-storage",
+    "cache"
+  ],
   "author": "",
   "license": "ISC",
   "bugs": {
